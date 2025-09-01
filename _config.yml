@@ -4,6 +4,7 @@ theme: minima
 
 header_pages:
   - teachers/index.md
+
 collections:
   reports:
     output: true
