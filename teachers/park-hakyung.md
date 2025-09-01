@@ -1,6 +1,7 @@
 ---
 title: 박하경
 layout: page
+permalink: /teachers/park-hakyung/
 ---
 
 # 박하경 학생 보고서 페이지
