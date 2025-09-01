@@ -5,4 +5,4 @@ student_id: park-hakyung
 date: 2025-09-01
 ---
 
-(여기에 실제 보고서 내용)
+여기에 실제 보고서 내용
