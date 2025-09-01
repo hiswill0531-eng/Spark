@@ -1,0 +1,269 @@
+---
+layout: none
+title: 보고서 작성
+---
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생 보고서 양식</title>
+    <!-- Tailwind CSS CDN을 사용하여 스타일링을 합니다. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* 'Inter' 폰트를 기본으로 사용합니다. */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+
+    <!-- 보고서 양식 컨테이너 -->
+    <div class="bg-white p-8 rounded-2xl shadow-xl w-full max-w-3xl">
+        <h1 class="text-3xl font-bold text-center mb-6 text-gray-800">학생 활동 보고서</h1>
+
+        <!-- 보고서 양식 -->
+        <form id="schoolReportForm">
+            <!-- 학생 이름 및 날짜 입력 필드 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-5">
+                <div>
+                    <label for="studentName" class="block text-gray-700 font-semibold mb-2">학생 이름</label>
+                    <input type="text" id="studentName" name="studentName" placeholder="학생 이름을 입력하세요"
+                           class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200">
+                </div>
+                <div>
+                    <label for="reportDate" class="block text-gray-700 font-semibold mb-2">보고서 날짜</label>
+                    <input type="date" id="reportDate" name="reportDate"
+                           class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200">
+                </div>
+            </div>
+
+            <!-- 출석 여부 -->
+            <div class="mb-5">
+                <label class="block text-gray-700 font-semibold mb-2">출석 여부</label>
+                <div class="flex items-center space-x-4">
+                    <label class="inline-flex items-center">
+                        <input type="radio" name="attendance" value="attended" checked
+                               class="form-radio text-blue-600 focus:ring-blue-500">
+                        <span class="ml-2 text-gray-700">출석</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input type="radio" name="attendance" value="tardy"
+                               class="form-radio text-blue-600 focus:ring-blue-500">
+                        <span class="ml-2 text-gray-700">지각</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input type="radio" name="attendance" value="absent"
+                               class="form-radio text-blue-600 focus:ring-blue-500">
+                        <span class="ml-2 text-gray-700">결석</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- 수업 시간 드롭다운 메뉴 -->
+            <div class="mb-5">
+                <label for="classHours" class="block text-gray-700 font-semibold mb-2">수업 시간</label>
+                <select id="classHours" name="classHours"
+                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200">
+                    <option value="0.5">30분</option>
+                    <option value="1.0">1시간</option>
+                    <option value="1.5">1시간 30분</option>
+                    <option value="2.0">2시간</option>
+                    <option value="2.5">2시간 30분</option>
+                    <option value="3.0">3시간</option>
+                </select>
+            </div>
+
+            <!-- 공부한 내용 체크박스 -->
+            <div class="mb-5">
+                <label class="block text-gray-700 font-semibold mb-2">공부한 내용 (다중 선택 가능)</label>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                    <label class="inline-flex items-center bg-gray-50 px-3 py-2 rounded-lg border border-gray-200 cursor-pointer hover:bg-gray-100 transition duration-200">
+                        <input type="checkbox" name="subject" value="Reading" class="form-checkbox text-blue-600 focus:ring-blue-500">
+                        <span class="ml-2 text-gray-700">Reading</span>
+                    </label>
+                    <label class="inline-flex items-center bg-gray-50 px-3 py-2 rounded-lg border border-gray-200 cursor-pointer hover:bg-gray-100 transition duration-200">
+                        <input type="checkbox" name="subject" value="Writing" class="form-checkbox text-blue-600 focus:ring-blue-500">
+                        <span class="ml-2 text-gray-700">Writing</span>
+                    </label>
+                    <label class="inline-flex items-center bg-gray-50 px-3 py-2 rounded-lg border border-gray-200 cursor-pointer hover:bg-gray-100 transition duration-200">
+                        <input type="checkbox" name="subject" value="Listening" class="form-checkbox text-blue-600 focus:ring-blue-500">
+                        <span class="ml-2 text-gray-700">Listening</span>
+                    </label>
+                    <label class="inline-flex items-center bg-gray-50 px-3 py-2 rounded-lg border border-gray-200 cursor-pointer hover:bg-gray-100 transition duration-200">
+                        <input type="checkbox" name="subject" value="Speaking" class="form-checkbox text-blue-600 focus:ring-blue-500">
+                        <span class="ml-2 text-gray-700">Speaking</span>
+                    </label>
+                    <label class="inline-flex items-center bg-gray-50 px-3 py-2 rounded-lg border border-gray-200 cursor-pointer hover:bg-gray-100 transition duration-200">
+                        <input type="checkbox" name="subject" value="School Work" class="form-checkbox text-blue-600 focus:ring-blue-500">
+                        <span class="ml-2 text-gray-700">School Work</span>
+                    </label>
+                    <label class="inline-flex items-center bg-gray-50 px-3 py-2 rounded-lg border border-gray-200 cursor-pointer hover:bg-gray-100 transition duration-200">
+                        <input type="checkbox" name="subject" value="Math" class="form-checkbox text-blue-600 focus:ring-blue-500">
+                        <span class="ml-2 text-gray-700">Math</span>
+                    </label>
+                    <label class="inline-flex items-center bg-gray-50 px-3 py-2 rounded-lg border border-gray-200 cursor-pointer hover:bg-gray-100 transition duration-200">
+                        <input type="checkbox" name="subject" value="Science" class="form-checkbox text-blue-600 focus:ring-blue-500">
+                        <span class="ml-2 text-gray-700">Science</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- 아이의 태도 및 참여도 척도 -->
+            <div class="mb-5">
+                <label class="block text-gray-700 font-semibold mb-2">아이의 태도 및 참여도 (1-5 척도)</label>
+                <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <span class="text-sm font-medium text-gray-500">매우 부족</span>
+                    <div class="flex items-center space-x-4">
+                        <label class="inline-flex items-center">
+                            <input type="radio" name="attitudeScale" value="1" class="form-radio text-red-500 focus:ring-red-400">
+                            <span class="ml-1 text-gray-700">1</span>
+                        </label>
+                        <label class="inline-flex items-center">
+                            <input type="radio" name="attitudeScale" value="2" class="form-radio text-yellow-500 focus:ring-yellow-400">
+                            <span class="ml-1 text-gray-700">2</span>
+                        </label>
+                        <label class="inline-flex items-center">
+                            <input type="radio" name="attitudeScale" value="3" checked class="form-radio text-blue-500 focus:ring-blue-400">
+                            <span class="ml-1 text-gray-700">3</span>
+                        </label>
+                        <label class="inline-flex items-center">
+                            <input type="radio" name="attitudeScale" value="4" class="form-radio text-green-500 focus:ring-green-400">
+                            <span class="ml-1 text-gray-700">4</span>
+                        </label>
+                        <label class="inline-flex items-center">
+                            <input type="radio" name="attitudeScale" value="5" class="form-radio text-green-600 focus:ring-green-500">
+                            <span class="ml-1 text-gray-700">5</span>
+                        </label>
+                    </div>
+                    <span class="text-sm font-medium text-gray-500">매우 우수</span>
+                </div>
+            </div>
+
+            <!-- 태도 및 참여도 코멘트 -->
+            <div class="mb-5">
+                <label for="attitudeComment" class="block text-gray-700 font-semibold mb-2">태도 및 참여도 코멘트</label>
+                <textarea id="attitudeComment" name="attitudeComment" rows="4" placeholder="학생의 태도와 참여에 대한 구체적인 코멘트를 작성하세요"
+                          class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200 resize-none"></textarea>
+            </div>
+
+            <!-- 과제 제출 여부 -->
+            <div class="mb-5">
+                <label class="block text-gray-700 font-semibold mb-2">과제 제출 여부</label>
+                <div class="flex items-center space-x-4">
+                    <label class="inline-flex items-center">
+                        <input type="radio" name="homeworkSubmission" value="submitted" checked
+                               class="form-radio text-blue-600 focus:ring-blue-500">
+                        <span class="ml-2 text-gray-700">제출함</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input type="radio" name="homeworkSubmission" value="not_submitted"
+                               class="form-radio text-blue-600 focus:ring-blue-500">
+                        <span class="ml-2 text-gray-700">미제출</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- 과제 내용 텍스트 영역 -->
+            <div class="mb-6">
+                <label for="homeworkContent" class="block text-gray-700 font-semibold mb-2">과제 내용</label>
+                <textarea id="homeworkContent" name="homeworkContent" rows="4" placeholder="다음 과제 내용을 작성하세요"
+                          class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200 resize-none"></textarea>
+            </div>
+
+            <!-- 제출 버튼 -->
+            <button type="submit"
+                    class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-300">
+                보고서 제출하기
+            </button>
+        </form>
+
+        <!-- 제출 성공 메시지 박스 -->
+        <div id="messageBox" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center p-4">
+            <div class="bg-white rounded-lg p-6 shadow-xl max-w-sm w-full">
+                <div class="text-center">
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">제출 완료</h3>
+                    <p class="text-gray-600">보고서가 성공적으로 제출되었습니다.</p>
+                </div>
+                <div class="mt-4 flex justify-center">
+                    <button id="closeMessage" class="bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-200">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 폼 제출 이벤트를 처리합니다.
+        const form = document.getElementById('schoolReportForm');
+        const messageBox = document.getElementById('messageBox');
+        const closeButton = document.getElementById('closeMessage');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // 기본 폼 제출 동작을 막습니다.
+
+            // 여기에서 폼 데이터를 가져와서 필요한 작업을 수행합니다.
+            const studentName = document.getElementById('studentName').value;
+            const reportDate = document.getElementById('reportDate').value;
+            const attendance = document.querySelector('input[name="attendance"]:checked').value;
+            const classHours = document.getElementById('classHours').value;
+            const attitudeScale = document.querySelector('input[name="attitudeScale"]:checked').value;
+            const attitudeComment = document.getElementById('attitudeComment').value;
+            const homeworkSubmission = document.querySelector('input[name="homeworkSubmission"]:checked').value;
+            const homeworkContent = document.getElementById('homeworkContent').value;
+            
+            // 체크박스에서 선택된 과목들을 배열로 가져옵니다.
+            const selectedSubjects = Array.from(document.querySelectorAll('input[name="subject"]:checked')).map(checkbox => checkbox.value);
+
+            // 간단한 유효성 검사
+            if (studentName && reportDate && classHours && attitudeComment && homeworkContent) {
+                console.log('제출된 데이터:', {
+                    studentName,
+                    reportDate,
+                    attendance,
+                    classHours,
+                    selectedSubjects,
+                    attitudeScale,
+                    attitudeComment,
+                    homeworkSubmission,
+                    homeworkContent
+                });
+
+                // 성공 메시지 박스를 표시합니다.
+                messageBox.classList.remove('hidden');
+                
+                // 폼을 초기화합니다.
+                form.reset();
+            } else {
+                 // 모든 필드를 채우도록 사용자에게 알립니다. alert() 대신 메시지 박스를 사용합니다.
+                const tempMessageBox = document.createElement('div');
+                tempMessageBox.id = "tempMessageBox";
+                tempMessageBox.className = "fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center p-4";
+                tempMessageBox.innerHTML = `
+                    <div class="bg-white rounded-lg p-6 shadow-xl max-w-sm w-full">
+                        <div class="text-center">
+                            <h3 class="text-lg font-bold text-gray-800 mb-2">경고</h3>
+                            <p class="text-gray-600">모든 필수 필드를 채워주세요.</p>
+                        </div>
+                        <div class="mt-4 flex justify-center">
+                            <button id="tempCloseButton" class="bg-red-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-red-700 transition duration-200">확인</button>
+                        </div>
+                    </div>
+                `;
+                document.body.appendChild(tempMessageBox);
+
+                document.getElementById('tempCloseButton').addEventListener('click', () => {
+                    document.body.removeChild(tempMessageBox);
+                });
+            }
+        });
+
+        // 메시지 박스 닫기 버튼 이벤트
+        closeButton.addEventListener('click', () => {
+            messageBox.classList.add('hidden');
+        });
+
+    </script>
+</body>
+</html>
