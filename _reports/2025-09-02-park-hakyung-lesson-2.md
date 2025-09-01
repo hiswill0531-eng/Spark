@@ -3,10 +3,6 @@ title: 2025-09-02 수업 보고서
 layout: page
 student_id: park-hakyung
 date: 2025-09-02
+permalink: /reports/2025-09-02-park-hakyung-lesson-2/
 ---
-
-오늘은 영어 리딩과 라이팅 수업을 진행했습니다.  
-- 리딩: 교재 10쪽까지 학습  
-- 라이팅: 일기 쓰기 연습 (5문장)  
-
-숙제: 내일 새로운 단어 10개 외워오기
+(본문 내용)
