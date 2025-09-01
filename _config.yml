@@ -1,0 +1,6 @@
+title: Spark
+description: My first GitHub Pages site
+theme: minima
+
+header_pages:
+  - teachers/index.md
