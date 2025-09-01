@@ -8,3 +8,6 @@ header_pages:
 collections:
   reports:
     output: true
+
+timezone: Asia/Seoul
+future: true
