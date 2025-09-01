@@ -1,7 +1,8 @@
-title: Spark
-description: My first GitHub Pages site
-theme: minima
+---
+title: Teachers
+layout: page
+---
 
-# 상단 메뉴에 보여줄 페이지 목록
-header_pages:
-  - students/index.md
+# Teachers
+
+여기는 교사 목록 페이지입니다.
